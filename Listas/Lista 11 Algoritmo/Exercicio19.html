@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantidade de xícaras de café com leite que tu ja tomou<input type="number" id="input_xicara">
+    <button onclick="calcular()">Ver a quantidade</button>
+    <div id="texto"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var xicara = Number(input_xicara.value)
+        var leite = 1 * xicara
+        var cafe = 2 * xicara
+        var contagemleite = 1
+        var contagemcafe = 1
+        while (contagemleite <= leite) {
+            texto.innerHTML += '<img src="leiteempo.jpg" alt="">'
+            contagemleite += 1
+        }
+        while (contagemcafe <= cafe) {
+            texto.innerHTML += '<img src="cafe.jpg" alt="">'
+            contagemcafe += 1
+        }
+    }
+</script>

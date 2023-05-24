@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    insira o primeiro numero do intervalo <input type="number" id ="numero1"><br>
+    insira o segundo numero do intervalo  <input type="number" id ="numero2"><br>
+    <button onclick="calcular()">S2 Pares</button><br>
+    <div id = "texto"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var n1 = Number(numero1.value)
+        var n2 = Number(numero2.value)
+
+        for (; n1 <= n2; n1++) {
+            if(n1 % 2 == 0){texto.innerHTML += `${n1}<br>`}
+        }
+    }
+</script>

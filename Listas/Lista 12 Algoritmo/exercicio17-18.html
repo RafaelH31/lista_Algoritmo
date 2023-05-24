@@ -1,0 +1,302 @@
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    * {
+        font-family: Arial, Helvetica, sans-serif;
+    }
+
+    .box-registro {
+        display: flex;
+        flex-direction: column;
+        border: 2px solid blue;
+        color: red;
+        height: fit-content;
+        width: fit-content;
+        padding: 3%;
+    }
+
+    .box-registro input {
+        width: 60%;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+
+    .form {
+        display: flex;
+        flex-direction: row;
+        font-size: large;
+    }
+
+    .form button {
+        background-color: white;
+        border: 2px solid orange;
+        width: 180px;
+        height: 40px;
+        margin-right: 10%;
+        color: orangered;
+        font-size: larger;
+        cursor: pointer;
+    }
+
+    .box-analise {
+        display: none;
+        flex-direction: column;
+        border: 2px solid blue;
+        color: red;
+        height: 50vh;
+        width: fit-content;
+        padding: 3%;
+    }
+
+    .box-analise input {
+        width: 25%;
+        margin-bottom: 10px;
+        margin-left: 10px;
+    }
+</style>
+
+<body>
+    <div class="box-analise" id="div_analise">
+        <h1>Analise de perfomance de Alunos Registro</h1>
+        <span class="form">
+            Entre com o intervalo de notas de
+            <input type="text" id="inpt_inicio" placeholder="De">
+            <input type="text" id="inpt_fim" placeholder="De">
+        </span>
+        <span class="form">
+            <button onclick="pesquisa()">Pesquisar</button>
+            <button onclick="AC1()">AC1</button>
+            <button onclick="AC2()">AC2</button>
+            <button onclick="AC3()">AC3</button>
+        </span>
+        <span id="span_resultado"></span>
+    </div>
+
+    <div class="box-registro" id="div_registro">
+        <h1>Analise de perfomance de Alunos Registro</h1>
+        <span class="form">
+            Entre com o Nome do Alunos
+            <input type="text" id="inpt_nome">
+        </span>
+        <span class="form">
+            Entre com a nota da AC1 do Alunos
+            <input type="text" id="inpt_nota1">
+        </span>
+        <span class="form">
+            Entre com a nota da AC2 do Alunos
+            <input type="text" id="inpt_nota2">
+        </span>
+        <span class="form">
+            Entre com a nota da AC3 do Alunos
+            <input type="text" id="inpt_nota3">
+        </span>
+        <span class="form">
+            <button onclick="registrar()">Registrar</button>
+            <button onclick="analisar()">Analisar</button>
+        </span>
+    </div>
+</body>
+
+</html>
+<script>
+    var listaNome = []
+    var listaNota = []
+    var listaNotaAC1 = []
+    var listaNotaAC2 = []
+    var listaNotaAC3 = []
+    var menorNota = 0;
+    var maiorNota = 0;
+
+    function registrar() {
+        var nome = inpt_nome.value
+        var nota1 = Number(inpt_nota1.value)
+        var nota2 = Number(inpt_nota1.value)
+        var nota3 = Number(inpt_nota1.value)
+        var nota = nota1 + nota2 + nota3
+        var validacaoNota = nota1 >= 0 && nota1 <= 10 && nota2 >= 0 && nota2 <= 10 && nota3 >= 0 && nota3 <= 10
+        if (nome != '' && validacaoNota) {
+            listaNome.push(nome)
+            listaNota.push(nota)
+            listaNotaAC1.push(nota1)
+            listaNotaAC2.push(nota2)
+            listaNotaAC3.push(nota3)
+        } else {
+            alert('Preencha os campos corretamente')
+        }
+    }
+    function analisar() {
+        div_analise.style.display = 'block';
+        div_registro.style.display = 'none';
+    }
+    function pesquisa() {
+        menorNota = listaNota[0];
+        maiorNota = listaNota[0];
+        span_resultado.innerHTML = ``
+        var inicioIntervalo = Number(inpt_inicio.value)
+        var fimIntervalo = Number(inpt_fim.value)
+        var validacaoInicio = inicioIntervalo >= 0 && inicioIntervalo <= 10
+        var validacaoFim = inicioIntervalo >= 0 && inicioIntervalo <= 10
+        if (validacaoFim && validacaoInicio && fimIntervalo > inicioIntervalo) {
+            var alunoIntervalo = 0;
+            var media = 0;
+            for (var i = 0; i <= listaNota.length; i++) {
+                if (listaNota[i] >= inicioIntervalo && listaNota[i] <= fimIntervalo) {
+                    span_resultado.innerHTML += `O aluno ${listaNome[i]} ficou com a nota ${listaNota[i]} <br>`
+                    alunoIntervalo++
+                    media += listaNota[i]
+                    if (listaNota[i] <= menorNota) {
+                        menorNota = listaNota[i]
+                    }
+                    if (listaNota[i] >= maiorNota) {
+                        maiorNota = listaNota[i]
+                    }
+                }
+            }
+            span_resultado.innerHTML += `
+            Total de alunos registrados: ${listaNome.length}
+            Total de alunos listado: ${alunoIntervalo}
+            Maior Nota = ${maiorNota}
+            Menor Nota = ${menorNota}
+            Média da Nota = ${(media / listaNota.length).toFixed(2)}`
+        }
+    }
+    function pesquisa() {
+        menorNota = listaNota[0];
+        maiorNota = listaNota[0];
+        span_resultado.innerHTML = ``
+        var inicioIntervalo = Number(inpt_inicio.value)
+        var fimIntervalo = Number(inpt_fim.value)
+        var validacaoInicio = inicioIntervalo >= 0 && inicioIntervalo <= 10
+        var validacaoFim = inicioIntervalo >= 0 && inicioIntervalo <= 10
+        if (validacaoFim && validacaoInicio && fimIntervalo > inicioIntervalo) {
+            var alunoIntervalo = 0;
+            var media = 0;
+            for (var i = 0; i <= listaNota.length; i++) {
+                if (listaNota[i] >= inicioIntervalo && listaNota[i] <= fimIntervalo) {
+                    span_resultado.innerHTML += `O aluno ${listaNome[i]} ficou com a nota ${listaNota[i]} <br>`
+                    alunoIntervalo++
+                    media += listaNota[i]
+                    if (listaNota[i] <= menorNota) {
+                        menorNota = listaNota[i]
+                    }
+                    if (listaNota[i] >= maiorNota) {
+                        maiorNota = listaNota[i]
+                    }
+                }
+            }
+            span_resultado.innerHTML += `
+            Total de alunos registrados: ${listaNome.length}
+            Total de alunos listado: ${alunoIntervalo}
+            Maior Nota = ${maiorNota}
+            Menor Nota = ${menorNota}
+            Média da Nota = ${(media / listaNota.length).toFixed(2)}`
+        }
+    }
+
+    function AC1() {
+        menorNota = listaNotaAC1[0];
+        maiorNota = listaNotaAC1[0];
+        span_resultado.innerHTML = ``
+        var inicioIntervalo = Number(inpt_inicio.value)
+        var fimIntervalo = Number(inpt_fim.value)
+        var validacaoInicio = inicioIntervalo >= 0 && inicioIntervalo <= 10
+        var validacaoFim = inicioIntervalo >= 0 && inicioIntervalo <= 10
+        if (validacaoFim && validacaoInicio && fimIntervalo > inicioIntervalo) {
+            var alunoIntervalo = 0;
+            var media = 0;
+            for (var i = 0; i <= listaNotaAC1.length; i++) {
+                if (listaNotaAC1[i] >= inicioIntervalo && listaNotaAC1[i] <= fimIntervalo) {
+                    span_resultado.innerHTML += `O aluno ${listaNome[i]} ficou com a nota ${listaNotaAC1[i]} <br>`
+                    alunoIntervalo++
+                    media += listaNotaAC1[i]
+                    if (listaNotaAC1[i] <= menorNota) {
+                        menorNota = listaNotaAC1[i]
+                    }
+                    if (listaNotaAC1[i] >= maiorNota) {
+                        maiorNota = listaNotaAC1[i]
+                    }
+                }
+            }
+            span_resultado.innerHTML += `
+            Total de alunos registrados: ${listaNome.length}
+            Total de alunos listado: ${alunoIntervalo}
+            Maior Nota = ${maiorNota}
+            Menor Nota = ${menorNota}
+            Média da Nota = ${(media / listaNotaAC1.length).toFixed(2)}`
+        }
+    }
+
+    function AC2() {
+        menorNota = listaNotaAC2[0];
+        maiorNota = listaNotaAC2[0];
+        span_resultado.innerHTML = ``
+        var inicioIntervalo = Number(inpt_inicio.value)
+        var fimIntervalo = Number(inpt_fim.value)
+        var validacaoInicio = inicioIntervalo >= 0 && inicioIntervalo <= 10
+        var validacaoFim = inicioIntervalo >= 0 && inicioIntervalo <= 10
+        if (validacaoFim && validacaoInicio && fimIntervalo > inicioIntervalo) {
+            var alunoIntervalo = 0;
+            var media = 0;
+            for (var i = 0; i <= listaNotaAC2.length; i++) {
+                if (listaNotaAC2[i] >= inicioIntervalo && listaNotaAC2[i] <= fimIntervalo) {
+                    span_resultado.innerHTML += `O aluno ${listaNome[i]} ficou com a nota ${listaNotaAC2[i]} <br>`
+                    alunoIntervalo++
+                    media += listaNotaAC2[i]
+                    if (listaNotaAC2[i] <= menorNota) {
+                        menorNota = listaNotaAC2[i]
+                    }
+                    if (listaNotaAC2[i] >= maiorNota) {
+                        maiorNota = listaNotaAC2[i]
+                    }
+                }
+            }
+            span_resultado.innerHTML += `
+            Total de alunos registrados: ${listaNome.length}
+            Total de alunos listado: ${alunoIntervalo}
+            Maior Nota = ${maiorNota}
+            Menor Nota = ${menorNota}
+            Média da Nota = ${(media / listaNotaAC2.length).toFixed(2)}`
+        }
+    }
+
+    function AC3() {
+        menorNota = listaNotaAC3[0];
+        maiorNota = listaNotaAC3[0];
+        span_resultado.innerHTML = ``
+        var inicioIntervalo = Number(inpt_inicio.value)
+        var fimIntervalo = Number(inpt_fim.value)
+        var validacaoInicio = inicioIntervalo >= 0 && inicioIntervalo <= 10
+        var validacaoFim = inicioIntervalo >= 0 && inicioIntervalo <= 10
+        if (validacaoFim && validacaoInicio && fimIntervalo > inicioIntervalo) {
+            var alunoIntervalo = 0;
+            var media = 0;
+            for (var i = 0; i <= listaNotaAC3.length; i++) {
+                if (listaNotaAC3[i] >= inicioIntervalo && listaNotaAC3[i] <= fimIntervalo) {
+                    span_resultado.innerHTML += `O aluno ${listaNome[i]} ficou com a nota ${listaNotaAC3[i]} <br>`
+                    alunoIntervalo++
+                    media += listaNotaAC3[i]
+                    if (listaNotaAC3[i] <= menorNota) {
+                        menorNota = listaNotaAC3[i]
+                    }
+                    if (listaNotaAC3[i] >= maiorNota) {
+                        maiorNota = listaNotaAC3[i]
+                    }
+                }
+            }
+            span_resultado.innerHTML += `
+            Total de alunos registrados: ${listaNome.length}
+            Total de alunos listado: ${alunoIntervalo}
+            Maior Nota = ${maiorNota}
+            Menor Nota = ${menorNota}
+            Média da Nota = ${(media / listaNotaAC3.length).toFixed(2)}`
+        }
+    }
+</script>

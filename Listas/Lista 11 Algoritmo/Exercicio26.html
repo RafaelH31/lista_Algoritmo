@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira um número<input type="number" id="limite" min="10" max="500">
+    <button onclick="calc()">Somar Pares</button> 
+    <div id="texto"></div>
+</body>
+</html>
+<script>
+    function calc() {
+        var numero = Number(limite.value)
+        var total = 0 
+        for (var cont = 1; cont <= numero; cont++) {
+            if (cont % 2 == 0) {
+                texto.innerHTML += `${cont}<br>`
+                var total = cont + total
+                
+            }
+        }
+        texto.innerHTML += `A soma dos pares é ${total}`
+    }
+</script>

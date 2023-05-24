@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Insira um número<input type="number" min="20" max="100" id="input_numero">
+    <button onclick="calcular()">Adoro múltiplos de 5</button><br>
+    <div id="numero"></div>
+</body>
+
+</html>
+<script>
+    function calcular() {
+        var limite = input_numero.value
+        for (var contador = 5; contador <= limite; contador ++){
+            if (contador % 5 == 0) {numero.innerHTML += `${contador}<br>`}
+        }
+    } 
+</script>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nota</title>
+</head>
+<body>
+    
+    Insira seu nome:
+    <br>
+    <input id= "input_nome">
+    <br>
+    Insira a nota da continuada:
+    <br>
+    <input type = "number" id= "input_cont">
+    <br>
+    Insira a nota da semestral:
+    <br>
+    <input type = "number" id= "input_semes">
+    <br>
+    <button onclick="média()">Média</button>
+
+</body>
+<script> 
+ 
+function média(){
+    var n1 = Number(input_cont.value) * 0.4
+
+    var n2 = Number(input_semes.value) * 0.6
+
+alert ("A média de " + input_nome.value + " será de " + Number (n1+n2/10))
+
+
+}
+
+
+
+</script>
+
+
+</html>

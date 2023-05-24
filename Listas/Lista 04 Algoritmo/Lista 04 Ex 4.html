@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Insira o sabor da pizza
+    <input id = "input_sabor" > <br><br>
+
+    Insira o valor da pizza
+    <input type = "number" id = "input_valor"> <br><br>
+
+    Insira a quantidade de amigos que vão comer
+    <input type = "number" id = "input_amigos"> <br><br>
+
+    <button onclick = "pizza_amigos()">Calcular valor por amigo</button><br><br>
+    <div id="div_pizza">Valor por amigo </div>
+
+</body>
+<script>
+function pizza_amigos(){
+    
+    var sabor = input_sabor.value
+    var valor = Number(input_valor.value) 
+    var amigos = Number(input_amigos.value)
+    var entregador = (valor*0.10)
+    div_pizza.innerHTML = `Cada amigo vai contribuir com R$${valor/amigos+entregador} para comprar a pizza de ${sabor}
+
+`}
+
+</script>
+</html>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <input type="text" id="input_destino">
+    <button onclick="adicionarvig()">Adicionar</button>
+    <button onclick="primeira_viagem()">Primeira viagem</button>
+    <button onclick="segunda_viagem()">Segundo viagem</button>
+    <button onclick="ultima_viagem()">Ultima viagem viagem</button>
+    <div id="texto"></div>
+</body>
+
+</html>
+<script>
+    var lista_viagem = []
+    function adicionarvig() {
+        var adicionar = input_destino.value
+        lista_viagem.push(adicionar)
+    }
+    function primeira_viagem() {
+        if (lista_viagem[0] == undefined) {
+            texto.innerHTML = `sem viagens registradas`
+        } else {
+            texto.innerHTML = `a primeira viagem é ${lista_viagem[0]}`
+        }
+    }
+    function segunda_viagem() {
+        if (lista_viagem[1] == undefined) {
+            texto.innerHTML = `viajou menos de duas vezes`
+        } else { texto.innerHTML = `a segunda viagem é ${lista_viagem[1]}` }
+    }
+    function ultima_viagem() {
+
+        var ultimo = lista_viagem.length - 1
+        if (lista_viagem[0] == undefined) {
+            texto.innerHTML = `não viajou`
+        } else { texto.innerHTML = `a segunda viagem é ${lista_viagem[ultimo]}`} 
+    }
+
+</script>

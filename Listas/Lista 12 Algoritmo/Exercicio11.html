@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Insira o preço do produto<input type="number" id="preco"><br>
+    <button onclick="cadastrar()">Cadastrar produto</button><br>
+    <button onclick="atualizar()">Atualizar estoque</button>
+    <div id="texto"></div>
+</body>
+
+</html>
+<script>
+    var estoque = []
+    var cont = 0
+
+    function cadastrar() {
+        var produto = Number(preco.value)
+        estoque.push(produto)
+
+        cont++
+
+    }
+    function atualizar() {
+        var somatoriaPrecos = 0;
+
+        for (var posicao = 0; posicao < estoque.length; posicao += 1) {
+
+            var precoProduto = estoque[posicao];
+            somatoriaPrecos += precoProduto;
+        }
+        texto.innerHTML = `Você tem ${cont} produtos cadastrados em estoque<br>Seu estoque vale ${somatoriaPrecos.toFixed(2)}`
+    }
+
+</script>

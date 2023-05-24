@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aposentadoria</title>
+</head>
+<body>
+    
+
+
+    Insira sua idade:
+    
+    <input type = number input id= "input_idade">
+
+    <br>
+
+    <br><br>
+
+    <button onclick="aposentadoria_mulher()">aposentadoria mulher</button>
+    
+    <button onclick="aposentadoria_homem()">aposentadoria homem</button>
+
+   
+
+
+</body>
+
+<script> 
+    
+function aposentadoria_mulher(){
+        
+    alert("Faltam " + (60 - input_idade.value) + " anos para você se aposentar")
+    
+    }
+    
+function aposentadoria_homem(){
+        
+        alert("Faltam " + (70 - input_idade.value) + " anos para você se aposentar")
+        
+        }
+
+
+    </script>
+
+
+</html>

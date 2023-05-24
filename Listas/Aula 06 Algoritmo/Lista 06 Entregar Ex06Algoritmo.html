@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira a temperatura ambiente <input type="number" id="input_temperatura">
+    <button onclick="calcular()">Verificar temperatura</button>
+    <p><img id="imagem" src="" alt=""></p>
+    
+
+</body>
+<script>
+    function calcular(){
+        
+        var temp = input_temperatura.value
+        
+        if(temp < 10){
+            imagem.src = "https://img.itdg.com.br/tdg/images/recipes/000/178/357/328308/328308_original.jpg?mode=crop&width=710&height=400"
+        } 
+            else{
+            imagem.src = "https://st1.uvnimg.com/58/93/9045d5f044b1ab352369e2bfd1e6/pao-mofado-embolorado-0522-1400x800.jpg"
+        }
+    }
+</script>
+</html>

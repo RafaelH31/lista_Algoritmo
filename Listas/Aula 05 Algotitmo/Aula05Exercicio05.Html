@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Insira a quantidade de kWh consumida no mês <input type = "Number" id = "kwh_input">
+    <button onclick="energia()">Calcular energia</button>
+    
+
+</body>
+<script>
+
+    function energia(){
+    
+    var energia = kwh_input.value * 0.85
+    var energia10 = energia * 0.10
+    var energiadesconto = energia - energia10
+    
+    if (energia < 100) {energia = energiadesconto}
+    
+    alert (`Você vai pagar R$${energia} nesse mês`)
+    
+}
+
+
+
+
+</script>
+</html>

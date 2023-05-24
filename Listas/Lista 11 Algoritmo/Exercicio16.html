@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas pessoas vâo entrar no carro?<input type="number" id = "input_pessoas"><br>
+    <button onclick="calcular()">#Partiu Carona</button><br>
+    <div id = "texto"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var pessoas = Number(input_pessoas.value)
+        var contagem = 1
+        while (contagem <= pessoas) {
+            if (contagem <= 5) {
+                texto.innerHTML += `Entrou o ${contagem}° passageiro<br>`
+            } else{
+                texto.innerHTML += `O ${contagem}° passageiro terá que esperar!<br>`
+            } 
+            
+            contagem += 1 
+        }
+    }
+</script>

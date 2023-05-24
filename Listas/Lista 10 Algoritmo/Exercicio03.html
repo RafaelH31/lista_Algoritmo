@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="div_mensagem" style="color: blue;">
+        Total guardado no cofrinho: R$0 <br>
+        Depósitos efetuados: 0 <br>
+        Retiradas efetuadas: 0 <br>
+    </div>
+    <button onclick="depositar50()">Depositar 0.50</button>
+    <button onclick="depositar2()">Depositar 2.00</button>
+    <button onclick="retirar50()">Retirar 0.50</button> <br>    
+    Quantidade: <input id="input_qtd"> 
+    <button onclick="retirar()">Retirar</button>   
+</body>
+</html>
+<script>
+    var total = 0;
+    var depositos = 0;
+    var retiradas = 0;
+
+    function atualizar_texto () {
+        div_mensagem.innerHTML = `
+            Total guardado no cofrinho: R$${total} <br>
+            Depósitos efetuados: ${depositos} <br>
+            Retiradas efetuadas: ${retiradas} <br>
+        `
+    }
+    
+    function depositar50 () {
+        total += 0.5;
+        depositos += 1;
+        atualizar_texto();
+    }
+
+    function depositar2 () {
+        total += 2;
+        depositos += 1;
+        atualizar_texto();
+    }
+
+    function retirar50 () {
+        total -= 0.5;
+        retiradas += 1;
+        atualizar_texto();
+    }
+
+    function retirar () {
+        var quantidade = Number(input_qtd.value)
+        total -= quantidade;
+        retiradas += 1;
+        atualizar_texto();
+    }
+</script>

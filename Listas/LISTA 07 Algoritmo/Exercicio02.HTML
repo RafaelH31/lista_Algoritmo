@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Renda Tuvalu</title>
+</head>
+
+<body>
+
+    Insira a renda familiar <input type="number" id="input_renda">
+    <button onclick="calcular()">Analisar Renda</button>
+    <p id="p_resposta"></p>
+
+</body>
+<script>
+
+    function calcular() {
+
+        var renda = input_renda.value
+
+        if (renda <= 250) {
+            p_resposta.innerHTML = "Classe E";
+        }
+        else {
+            if (renda <= 900) {
+                p_resposta.innerHTML = "Classe D";
+            }
+            else {
+                if (renda <= 2500) {
+                    p_resposta.innerHTML = "Classe C";
+                } else {
+                    if (renda <= 9500) {
+                        p_resposta.innerHTML = "Classe B";
+                    } else {
+                        p_resposta.innerHTML = "Classe A";
+
+
+
+                    }
+                }
+            }
+        }
+    }
+</script>
+
+</html>

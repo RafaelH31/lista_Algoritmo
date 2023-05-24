@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+</head>
+
+<body>
+
+    Digite o nome da linha: <input type="text" id="val">
+    <button onclick="calc()">gravar onibus</button>
+
+    <div id="div1"></div>
+
+    pesquisar Linha <input type="text" id="val2">
+    <button onclick="pes()">Pesquisar</button>
+
+    <div id="div2"></div>
+
+    <script>
+        var list = [];
+
+        function calc() {
+            var val1 = val.value
+
+            list.push(val1);
+
+            div1.innerHTML = "";
+
+            var la = "";
+
+            for (var cont = list.length - 1; cont >= 0; cont--) {
+                var linha = list[cont];
+                la += linha + `<br>`;
+            }
+
+            div1.innerHTML = la;
+        }
+        function pes() {
+            var pes1 = val2.value;
+            var list2 = [];
+            var cont2 = 0
+
+            for (var cont1 = 0; cont1 < list.length; cont1++) {
+                if (list[cont1] === pes1) {
+                    cont2++;
+                    list2.push(cont1 + 1);
+                }
+            }
+
+            if (cont1 === 0) {
+                div2.innerHTML = `Você nunca pegou essa linha.`;
+            } else {
+                div2.innerHTML = `Você já pegou essa linha ${cont2} +`;
+            }
+        }
+
+
+
+    </script>
+</body>
+
+</html>

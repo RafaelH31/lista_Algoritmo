@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Taxista</title>
+</head>
+<body>
+    
+    Insira o nome do passageiro <input id = 'input_passageiro'><br><br>
+    Insira a distância em km <input type = 'Number' id = 'input_distancia'><br><br>
+    Insira o horário da corrida <input type = 'Number' id = 'input_horas' min = '0' max = '23'><br><br>
+    Insira a bandeira da corrida <input type = 'Number' id = 'input_bandeira' min = '1' max = '3'><br><br>
+
+    
+    <button onclick = 'calcular_corrida()'>Calcular Corrida</button><br><br>
+    <div id = 'info'></div>
+
+</body>
+<script>
+function calcular_corrida(){
+    
+    var passageiro = input_passageiro.value
+    var distancia = Number(input_distancia.value)
+    var horas = Number(input_horas.value)
+    var bandeira = Number(input_bandeira.value)
+
+    if(bandeira == 1){
+        
+        if(horas <= 6 ) {var valorCorrida = (distancia) + (distancia * 1.25 * 0.05)
+        
+            info.innerHTML += `${valorCorrida}`
+        }
+        
+        if (horas >= 7){
+            if (horas <= 12){var valorCorrida = (1.25 * distancia) + (distancia * 1.25 * 0.10)
+            info.innerHTML += `${valorCorrida}`}
+        }
+        
+        if (horas >= 13){var valorCorrida = (1.25 * distancia) + (distancia * 1.25 * 0.15)
+            info.innerHTML += `${valorCorrida}`
+        }
+        
+        info.innerHTML = `Olá ${passageiro} sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia}km e o total da corrida será de R$${valorCorrida}`   
+    }
+    if(bandeira == 2){
+        
+        if(horas <= 6 ) {var valorCorrida = (1.25 * distancia) + (distancia * 1.25 * 0.10)
+            info.innerHTML += `${valorCorrida}`
+        }
+        
+        if (horas >= 7){
+            if (horas <= 12){var valorCorrida = (1.25 * distancia) + (distancia * 1.25 * 0.20)
+            info.innerHTML += `${valorCorrida}`}
+        }
+        
+        if (horas >= 13){var valorCorrida = (1.25 * distancia) + (distancia * 1.25 * 0.30)
+            info.innerHTML += `${valorCorrida}`
+        }
+        info.innerHTML = `Olá ${passageiro} sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia}km e o total da corrida será de R$${valorCorrida}`
+    }
+    if(bandeira == 3){
+        
+        if(horas <= 6 ) {var valorCorrida = (1.25 * distancia) + (distancia * 1.25 * 0.15)
+            info.innerHTML += `${valorCorrida}`
+        }
+        
+        if (horas >= 7){
+            if (horas <= 12){var valorCorrida = (1.25 * distancia) + (distancia * 1.25 * 0.30)
+            info.innerHTML += `${valorCorrida}`}
+        }
+        
+        if (horas >= 13){var valorCorrida = (1.25 * distancia) + (distancia * 1.25 * 0.45)
+            info.innerHTML += `${valorCorrida}`
+        }
+        info.innerHTML = `Olá ${passageiro} sua corrida, será na bandeira ${bandeira}, percorrerá ${distancia}km e o total da corrida será de R$${valorCorrida}`
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+}
+</script>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Elevador</title>
+</head>
+<body>
+    Insira o peso do elevador <input type = "number" id = "input_elevador">
+    <button onclick="elevador()">Ligar elevador</button>
+    
+</body>
+<script>
+    function elevador(){
+        
+        var elevador = input_elevador.value
+        
+        if(elevador < 500){
+            alert("Elevador vai se mover")
+        }
+        if(elevador >= 500 ){
+            alert("Alguém precisa descer do elevador")
+        }
+    }
+</script>
+</html>

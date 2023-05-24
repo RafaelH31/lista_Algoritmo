@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Triangulo</title>
+</head>
+
+<body>
+    Insira o lado 1 <input type="number" id="input_lado1"><br><br>
+    Insira o lado 2 <input type="number" id="input_lado2"><br><br>
+    Insira o lado 3 <input type="number" id="input_lado3"><br><br>
+    <button onclick="calc()">Verificar lados</button>
+</body>
+<script>
+    function calc() {
+        var L1 = Number(input_lado1.value)
+        var L2 = Number(input_lado2.value)
+        var L3 = Number(input_lado3.value)
+
+        if (L1 > 0 && L2 > 0 && L3 > 0) {
+
+            if (L1 + L2 != L3 && L2 + L3 != L1 && L1 + L3 != L2) {
+
+                if (L1 == L2 && L2 == L3) { alert('Equilátero') }
+
+                else if (L1 != L2 && L2 != L3 && L1 != L3) { alert('Escaleno') }
+                else { (alert('Isósceles')) }
+
+            } else (alert('Lados invalidos'))
+        } else (alert('Lados invalidos'))
+    }
+</script>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <button onclick="sortear()">Sortear imagem</button>
+    <div id="imagem"></div>
+</body>
+
+</html>
+<script>
+
+    var img = [
+        img1 = `<img style =  "height: 500px" "width: 500px" src="20220807_001036.jpg" alt="">`,
+        img2 = `<img style =  "height: 500px" "width: 500px" src="20230414_224756.jpg" alt="">`,
+        img3 = `<img style =  "height: 500px" "width: 500px" src="bloodborn 1920-1200-928037.jpg" alt="">`,
+        img4 = `<img style =  "height: 500px" "width: 500px" src="bloodborn2 1920-1200.png" alt="">`,
+        img5 = `<img style =  "height: 500px" "width: 500px" src="dark souls 1080.jpg" alt="">`
+    ]
+
+    function sortear() {
+
+        if (img.length > 0) {
+            var posicaoSorteada = parseInt(Math.random() * img.length)
+
+            console.log(posicaoSorteada)
+            imagem.innerHTML = `${img[posicaoSorteada]}`
+            img.splice(posicaoSorteada, 1)
+
+        } else {
+            alert("Não há mais imagens para exibir")
+        }
+    }
+
+
+</script>
+<!-- <script>
+    var img = [
+    img1 = `<img style =  "height: 500px" "width: 500px" src="20220807_001036.jpg" alt="">`,
+    img2 = `<img style =  "height: 500px" "width: 500px" src="20230414_224756.jpg" alt="">`,
+    img3 = `<img style =  "height: 500px" "width: 500px" src="bloodborn 1920-1200-928037.jpg" alt="">`,
+    img4 = `<img style =  "height: 500px" "width: 500px" src="bloodborn2 1920-1200.png" alt="">`,
+    img5 = `<img style =  "height: 500px" "width: 500px" src="dark souls 1080.jpg" alt="">`
+    ]
+    function sortear() {
+
+        var aleatorio = Math.random() * 5
+
+        var resultado = aleatorio + min   
+        var resultadoF = resultado.toFixed(0)
+        console.log(resultadoF)
+
+        
+        imagem.innerHTML = `${img[resultadoF - 1]}`
+        img[resultadoF - 1] = `vazio`
+        
+    
+    }
+        
+</script> -->

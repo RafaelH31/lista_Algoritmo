@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira qual tabuada <input type="number" id = 'input_tabuada'><br>
+    Insira até qual número você quer<input type="number" id = 'limite_tabuada'><br>
+    <button onclick="calcular()">calcular</button>
+    <div id = 'texto'></div>
+    
+</body>
+</html>
+<script>
+    function calcular() {
+        var tabuada = Number(input_tabuada.value)
+        var limite = Number(limite_tabuada.value)
+        var cont = 0 
+        while (cont <= limite) {
+            cont += 1 
+            var resultado = tabuada * cont 
+            var verificar = resultado % 2
+            
+            if (verificar == 0){
+                texto.innerHTML += `<br><span style="color: blue;">${resultado}</span><br>`
+            } else {
+                texto.innerHTML += `<br><span style="color: red;">${resultado}</span><br>`
+            }
+        }
+    }
+</script>

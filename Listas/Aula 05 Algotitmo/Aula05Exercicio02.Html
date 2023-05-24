@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+Quantas latas de refrigerante você toma por dia <input type = "Number" id = "input_latas">
+<button onclick = "latas_dia()">Calcular por ano</button>
+<div id="latas_por_ano"></div>
+
+
+
+
+</body>
+<script>
+    function latas_dia() {
+        var latas = Number(input_latas.value)
+        var latasAno = Number(latas * 365)
+        
+        latas_por_ano.innerHTML = `Você toma ${latasAno} latas por ano`
+        
+        if (latasAno >= 500){
+        latas_por_ano.innerHTML += " cuidado com a diabetes!"}
+        
+        
+    }
+</script>
+</html>

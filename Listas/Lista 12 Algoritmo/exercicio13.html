@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <select id="jogo">
+        <option value="vitoria">vitoria</option>
+        <option value="derrota">derrota</option>
+        <option value="empate">empate</option>
+    </select>
+    Indique qual jogo quer saber o resultado<input type="number" id="numero_jogo">
+    <button onclick="registrar()">registrar jogo</button>
+    <button onclick="pesquisar()">pesquisar jogo</button>
+    <div id="texto"></div>
+    <div id="div"></div>
+</body>
+</html>
+<script>
+    var lista_jogos = []
+    var V = 0
+    var D = 0
+    var E = 0
+    function registrar(){
+        
+        var resultado = jogo.value
+        lista_jogos.push(resultado)
+
+        if (resultado == "vitoria") {
+            V ++ 
+        } else if (resultado == "derrota"){
+            D ++
+        } else {
+            E ++ 
+        }
+        var total = (V * 3) + E
+        var totalPontos = lista_jogos.length * 3;
+        texto.innerHTML =  `O time teve: ${V} vitórias, ${E} empates, ${D} derrotas<br>
+        pontuação total: ${total}<br>
+        aproveitamento: ${(total/totalPontos) * 100}%` 
+       
+    }
+    function pesquisar(){
+        var jogoIndicado = numero_jogo.value;
+        div.innerHTML = "";
+
+            if (jogoIndicado > 0 && jogoIndicado <= lista_jogos.length) {
+                var resultado = lista_jogos[jogoIndicado - 1];
+
+                if (resultado === "vitoria") {
+                    div.innerHTML = `No ${jogoIndicado}º jogo, o time ganhou.`;
+                } else if (resultado === "empate") {
+                    div.innerHTML = `No ${jogoIndicado}º jogo, o time empatou.`;
+                } else if (resultado === "derrota") {
+                    div.innerHTML = `No ${jogoIndicado}º jogo, o time perdeu.`;
+                }
+            } else {
+                div.innerHTML = `Não foi cadastrado o ${jogoIndicado}º jogo.`;
+            }
+    }
+        
+</script>

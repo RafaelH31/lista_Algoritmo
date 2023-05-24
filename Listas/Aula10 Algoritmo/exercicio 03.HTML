@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div style = "color:blue">
+    Total guardado no cofrinho: R$0<br>
+    Depósitos efetuados: 0<br>
+    Retiradas efetuadas: 0<br>
+    </div>
+    <button onclick="depositar50()">Depositar 0.50</button>
+    <button onclick="depositar20()">Depositar 2.00</button>
+    <button onclick="retirar50()">Retirar 0.50</button>
+</body>
+<script>
+
+    var total = 0;
+    var depositos = 0;
+    var retiradas = 0;
+    
+    function depositar50(){
+        total += 0.5;
+        depositos += 1;
+    }
+    function atualizar(){
+        div_mensagem.innerHTML = `
+        
+        `
+    }
+</script>
+</html>

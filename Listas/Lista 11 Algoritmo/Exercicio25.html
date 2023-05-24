@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o número de usuários <input type="number" min="0" max="100" id="input_user">
+    <button onclick="calcular()">Ver Divisores</button>
+    <div id="texto"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var user = Number(input_user.value)
+        for (var cont = 1; cont <= user; cont++) {
+            if (user % cont == 0) {
+                texto.innerHTML += `<br>${cont}`
+                if (user % 2 != 0) {
+                    texto.innerHTML += ` É um número primo`
+                }
+            }
+        }
+    }
+
+</script>

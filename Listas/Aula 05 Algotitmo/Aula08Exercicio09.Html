@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Insira a última serie (SITCOM) que você assistiu <input id = "input_serie"><br><br>
+    Insira quantos episodios você assistiu <input type = "Number" id = "input_eps"><br><br>
+    <button onclick = "verificar_nível()">Verificar Nível</button> <br><br>
+    <div id = "div_serie">  </div>
+
+</body>
+<script>
+    function verificar_nível() {
+    
+    var serie = input_serie.value
+    var eps = input_eps.value
+    var tempo = eps * 22
+    var tempoTotal = tempo / 60
+
+    div_serie.innerHTML = `Vejo que você gosta da série ${serie} `
+
+    if(tempoTotal > 30 ){
+        div_serie.innerHTML += " Uau, você realmente gosta dessa série!"
+    }
+        
+    }
+
+
+
+
+
+
+</script>
+</html>

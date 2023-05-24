@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    Insira o numero de votos do candidato A 
+    
+    <input type = "number" id = 'candidatoA'> <br>
+
+    Insira o numero de votos do candidato B 
+
+    <input type = "number" id = 'candidatoB'> <br>
+
+    Insira o numero de votos brancos 
+
+    <input type = "number" id = 'br'> <br>
+
+    Insira o numero de votos nulos 
+
+    <input type = "number" id = 'nl'> <br><br>
+
+    <button onclick = "resultado_eleição()">Resultado da eleição</button> 
+
+    <div id="eleição">Resultado</div>
+
+</body>
+<script>
+
+function resultado_eleição() {
+
+    var ca = Number (candidatoA.value)
+
+    var cb = Number (candidatoB.value)
+
+    var branco = Number (br.value)
+    
+    var nulo = Number (nl.value)
+
+    var total =  (ca+cb+branco+nulo)
+    
+    var inv =  (branco+nulo)
+ 
+    var resultadoA =  (ca/total)*100
+
+    var resultadoB = (cb/total)*100
+
+    eleição.innerHTML = "O total de votos foi:  " + total + "<br>" + 
+    " O candidato A obteve: " + resultadoA + "% dos votos" +  "<br>" +
+    "O candidato B obteve: " + resultadoB + "% dos votos" +  "<br>" +
+    "A eleição teve " + inv + "  votos invalidos"
+                        
+}
+</script>
+</html> 

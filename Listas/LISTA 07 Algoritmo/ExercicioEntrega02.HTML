@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Times Sp</title>
+</head>
+<style>
+    body {
+
+        background-color: grey;
+
+    }
+</style>
+
+<body>
+
+    Time do coração <input type="text" id="input_time">
+    <button onclick="calcular()">Fale sobre esse time</button>
+    <div id="IDtime">
+
+</body>
+<script>
+    function calcular() {
+
+        var time = input_time.value
+
+        if (time == "corinthians") {
+            IDtime.innerHTML = "<p style='background-color: black; color: white;'>Salve o Corinthians</p>"
+        }
+
+        else if (time == "palmeiras") {
+            IDtime.innerHTML = "<p style='background-color: green; color: white;'>Salve o alviverde imponente</p>"
+        }
+        else if (time == "santos") {
+            IDtime.innerHTML = "<p style='background-color: white; color: black;'>Agora quem dá a bola é o Santos</p>"
+        }
+
+        else if (time == "são paulo") {
+            IDtime.innerHTML = "<p style='background-color: black; color: red;'>Salve o Tricolor paulista</p>";
+        }
+    }
+</script>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira os bairros que você já morou<input type="text" id="input_bairro">
+    Insira um número <input type="number" id="input_numero">
+    <button onclick="cadastrar()">Cadastrar Bairro</button>
+    <button onclick="exibir()">Exibir Bairro</button>
+    <div id="texto"></div>
+</body>
+</html>
+<script>
+    var lista_bairro = []
+    function cadastrar() {
+        var cadastro = input_bairro.value
+        lista_bairro.push(cadastro)
+    }
+    function exibir(){
+        var num = input_numero.value
+       if (num > lista_bairro.length ) {
+        texto.innerHTML = "você ainda não morou nessa quantidade de bairros"
+       } else{
+        texto.innerHTML = `${lista_bairro[num - 1]}` 
+       }
+    }
+</script>

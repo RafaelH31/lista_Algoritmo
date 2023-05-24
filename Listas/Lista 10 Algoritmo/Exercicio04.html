@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <button onclick="andarE()">Mover p/ esquerda</button>
+    <button onclick="andarD()">Mover p/ direita</button> <br>
+    QTD Pixels: <input id="input_pixels"> <br>
+    <img id="img_bart" style="width: 150px" src="bart_skate.png" alt="">
+</body>
+</html>
+<script> 
+    var distancia = 0;
+
+    function andarD () {
+        var pixels = Number(input_pixels.value);
+        distancia += pixels;
+        img_bart.style.marginLeft = `${distancia}px`
+    }
+    function andarE () {
+        var pixels = Number(input_pixels.value);
+        distancia -= pixels;
+        img_bart.style.marginLeft = `${distancia}px`
+    }
+</script>

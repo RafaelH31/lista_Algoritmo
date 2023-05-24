@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IMC</title>
+</head>
+<body>
+    Insira a sua altura <input type="number" id = "id_altura"><br><br>
+    Insira seu peso <input type="number" id = "id_peso"><br><br>
+    <button onclick="calc()">Verificar IMC</button><br><br>
+    <p id = 'resposta'></p>
+</body>
+<script>
+function calc(){
+    
+    var altura = Number(id_altura.value)
+    var peso = Number(id_peso.value)
+    if(altura > 0 && peso > 0){
+       if(altura > 100){ altura = altura / 100 }
+     
+      var imc = peso / (altura * altura)
+
+      if(imc < 18.5){resposta.innerHTML = "<p style = 'color: blue;'>Abaixo do Peso</p>"}
+      if(imc >= 18.5 && imc <= 24.9){resposta.innerHTML ="<p style = 'color: green;'>Peso Ideal</p>"}
+      if(imc > 24.9 && imc <= 30){resposta.innerHTML = "<p style = 'color: yellow;'>Excesso de Peso</p>"}
+      if(imc > 30 && imc <= 35){resposta.innerHTML = "<p style = 'color: orange;'>Obesidade</p>"}
+      if(imc > 35){resposta.innerHTML = "<p style = 'color: red;'>Obesidade Extrema</p>"}
+      
+    }else (alert('insira a altura e o peso corretos'))
+}
+</script>
+</html>

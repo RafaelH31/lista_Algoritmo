@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+Insira sua meta de economia <input type="number" id="input_meta"><BR><BR>
+Insira quanto dinheiro você tem <input type="number" id="input_dinheiro"><BR><BR>
+<button onclick="calcular()">Analisar economia</button>
+<p id = "p_resultado"></p>
+
+
+</body>
+<script>
+function calcular(){
+    
+var meta = Number(input_meta.value)
+var dinheiro = Number(input_dinheiro.value)
+
+    if(dinheiro == meta){
+    p_resultado.innerHTML = 'Parabéns, meta alcançada!'
+    }
+   
+    else if (dinheiro > meta){
+
+        p_resultado.innerHTML = `Meta ultrapassada em R$${dinheiro - meta}` }
+        
+        else {
+        p_resultado.innerHTML = `Força! Ainda em busca da meta! Falta R$${meta - dinheiro}`
+            }
+
+}
+
+</script>
+</html>

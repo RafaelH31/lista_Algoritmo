@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculus Impostus</title>
+</head>
+<body>
+    
+    Insira seu salário: <input type = "Number" id = "input_salario"><br><br>
+    Insira o adicional mensal: <input type = "Number" id = "input_adicional"><br><br>
+    Insira seu bônus de usuário: <input type = "Number" id = "input_bonus"><br><br>
+    <button onclick="calcular()">Analisar Minha Renda</button> <br><br>
+    <div id = "div_dinheiro"></div><br><br>
+    <div id = "div_poupe"></div>
+</body>
+<script>
+function calcular() {
+    
+    var salario = Number(input_salario.value)
+    var adicional = Number(input_adicional.value)
+    var bonus = Number(input_bonus.value)
+    var bruto = salario + adicional + bonus 
+    var ir = 0
+    
+    if(bruto >= 10000){
+        var ir = bruto * 0.125
+    }
+    
+    var brutoAtual = bruto - ir
+    var inss = brutoAtual * 0.10
+    var fgts = brutoAtual * 0.08
+    
+    var liquido = bruto - ir - inss - fgts
+
+    div_dinheiro.innerHTML = `<b>ANÁLISE DA SUA RENDA:</b><br><br>
+
+        Com o salário de <b>R$${salario}</b>, adicional de <b>R$${adicional}</b> e bônus de <b>R$${bonus}</b>, você tem: <br><br>
+
+        Bruto: <b>R$${bruto}</b><br>
+
+        IR: <b>R$${ir}</b><br>
+
+        INSS: <b>R$${inss}</b><br>
+
+        FGTS: <b>R$${fgts}</b><br>
+
+        Líquido: <b>R$${liquido}</b>` 
+
+    div_poupe.innerHTML = ""
+    
+    if(liquido > 2500){
+
+        var economize = liquido * 0.15
+        var ano = economize * 12
+
+        div_poupe.innerHTML = `Com a renda de <b>R$${liquido}</b>, é recomendado poupar <b>R$${economize}</b>, para que em um ano tenha poupado <b>R$${ano}</b>`}
+
+    }
+
+</script>
+</html>

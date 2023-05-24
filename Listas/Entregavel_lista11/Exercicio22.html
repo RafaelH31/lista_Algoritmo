@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .bonus {
+            display: inline-flex;
+            width: 10px;
+            height: 10px;
+            background-image: url('estrela.png');
+            background-size: contain;
+        }
+    </style>
+</head>
+<body>
+    Qtd_depositos<input type="number" id="input_deposito"><br>
+    Valor<input type="number" id="input_valor"><br>
+    <button onclick="calcular()">Acompanhar grana</button><br>
+    <div id="conta"></div>
+</body>
+</html>
+<script>
+    function calcular() {
+        var deposito = Number(input_deposito.value)
+        var valor = Number(input_valor.value)
+        var saldo = 0
+        var mes = 1
+        while (mes <= deposito){
+            saldo += valor
+            if (mes % 3 == 0) { 
+                var bonus = saldo * 0.01 
+                saldo += bonus 
+                conta.innerHTML += `${mes}°Mês: R$${saldo}<span class="bonus"></span><br>`
+            } else {
+                conta.innerHTML += `${mes}°Mês: R$${saldo}<br>`
+            }
+            mes += 1
+        }
+        conta.innerHTML += `Total guardado: R$${saldo}`
+    }
+</script>

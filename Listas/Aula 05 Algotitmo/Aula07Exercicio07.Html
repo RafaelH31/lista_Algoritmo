@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Insira o saldo da conta <input type = "Number" id = "input_saldo"> 
+    Insira o valor do débito <input type = "Number" id = "input_debito">
+    
+    <button onclick = "conta()">Analisar conta</button>
+    <p id = "p_conta"> </p>
+
+
+</body>
+<script>
+
+    function conta() {
+        
+        var saldo = input_saldo.value
+        var debito = input_debito.value
+        var saldo_Atual = saldo - debito
+
+        p_conta.innerHTML = `O saldo atual da conta corrente é R$${saldo_Atual}`
+
+        if(saldo_Atual < 0){
+            
+            p_conta.style = style = "color: red;" // forma mais otimizada
+           
+            //p_conta.innerHTML = `<p style = "color: red;"><b> O saldo atual da conta corrente é R$${saldo_Atual}</p>`
+        }
+
+
+
+        
+    }
+
+
+
+</script>
+</html>

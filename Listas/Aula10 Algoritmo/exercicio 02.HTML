@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dinheiros salarius</title>
+</head>
+<body>
+    Insira seu salário <input type = "number" id = "input_salario">
+    <p id = 'resultado'></p>
+    <button onclick="calc()">Confirmar salário</button>
+    <button onclick="pagar()">Pagar conta de 100</button>
+    <button onclick="pagar2()">Pagar conta de 500</button>
+    <button onclick="loteria()">Ganhar 2000 na loteria</button>
+
+</body>
+<script>
+
+var conta = 0
+
+function calc() {
+    conta += Number(input_salario.value)
+    resultado.innerHTML = `Grana atual: R$${salario}`
+}
+
+function pagar() {
+    conta += Number(input_salario.value)
+    resultado.innerHTML = `Grana atual: R$${conta - 100}`
+}
+
+function pagar2() {
+    conta += Number(input_salario.value)
+    resultado.innerHTML = `Grana atual: R$${conta - 500}`
+}
+function loteria() {
+    conta += Number(input_salario.value)
+    resultado.innerHTML = `Grana atual: R$${conta + 2000}`
+}
+
+
+</script>
+</html>

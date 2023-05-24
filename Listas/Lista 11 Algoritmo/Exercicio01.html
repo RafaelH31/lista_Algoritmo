@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Contador</title>
+</head>
+<body>
+    <button onclick="contar_15()">Contar até 15</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function contar_15(){
+        var contador = 1
+        div_mensagem.innerHTML = ""
+        while (contador <= 15) { 
+            div_mensagem.innerHTML += `${contador} <br>`
+            contador += 1
+        }
+    }
+</script>

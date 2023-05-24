@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor da passagem
+<input type = "number" id = 'input_passagem'><br><br>
+
+    Insira a quantidade de viagens 
+<input type = "number" id = 'input_viagens'><br><br>
+
+    Insira a sua distância do trabalho até a sua casa em km
+<input type = "number" id = 'input_distancia'><br><br>
+
+    <button onclick = "calcularvt()">Calcular Vt</button>
+    <div id = "valor_transporte">Valor por transporte</div>
+
+</body>
+<script>
+function calcularvt() {
+    var passagem = Number(input_passagem.value)
+    var viagens = Number(input_viagens.value)
+    var distancia = Number(input_distancia.value)
+   
+    var vonibus = viagens * 0.90
+    var onibusmes = vonibus * passagem
+   
+    var ubermes = viagens * 0.10
+    var vuber = ubermes * distancia * 0.75
+    
+    valor_transporte.innerHTML = `Você vai gastar por mês R$ ${onibusmes+vuber} Com transporte.`
+
+}
+
+
+</script>
+</html>

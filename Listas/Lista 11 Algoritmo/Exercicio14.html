@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira sua idade<input type="number" id ="input_idade"><br>
+    <button onclick="calcular()">Fases da vida</button><br>
+    <div id = "texto"></div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var idade = input_idade.value
+        var anos = 0
+        while (anos <= idade) {
+            if(anos >= 0 && anos <= 4){texto.innerHTML += `${anos} anos (Primeira infância)<br>`}
+            if(anos > 4 && anos <= 6){texto.innerHTML += `${anos} anos (Pré-escolar)<br>`}
+            if(anos > 6 && anos <= 10){texto.innerHTML += `${anos} anos (Segunda infância)<br>`}
+           
+            if(anos > 10 && anos <= 18){texto.innerHTML += `${anos} anos (Adolescência)<br>`}
+            if(anos > 18 && anos <= 50){texto.innerHTML += `${anos} anos (Adulto)<br>`}
+            if(anos > 50 && anos <= 100){texto.innerHTML += `${anos} anos (Melhor idade)<br>`}
+
+            if(anos > 100){texto.innerHTML += `${anos} anos (Matusalém)<br>`}
+            anos += 1
+        }
+    }
+</script>

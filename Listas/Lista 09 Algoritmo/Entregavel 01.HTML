@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Auxilius Covidius</title>
+</head>
+<body>
+    
+Insira sua renda individual <input type="number" id = 'input_renda_individual'><br><br>
+Insira sua renda familiar <input type="number" id = 'input_renda_familiar'><br><br>
+
+<button onclick="calcular()">Terei o beneficio</button><br>
+<p id ='p_resultado'></p>
+
+</body>
+<script>
+
+function calcular(){
+
+    var RendaIndiv = input_renda_individual.value
+    var RendaFamil = input_renda_familiar.value
+
+    if (RendaIndiv <= 2000 || RendaFamil <= 3000 ) {
+        p_resultado.innerHTML = 'Você terá direito ao auxílio'    
+    } else {p_resultado.innerHTML = 'Sem direito ao auxílio'}
+}
+
+</script>
+</html>

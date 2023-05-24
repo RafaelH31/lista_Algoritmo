@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bilhete único</title>
+</head>
+<body>
+    
+    Qual o valor da passagem ?
+    <br>
+    <input type = "number" id= "input_passagem">
+    <br>
+    Quantas viagens você ira fazer por mês ?
+    <br>
+    <input type = "number" id= "input_viagens_mes">
+    <br>
+    <button onclick="ver_economia()">Ver economia</button>
+
+
+
+</body>
+<script>
+
+function ver_economia(){
+    
+    var inteira = Number(input_passagem.value) * Number(input_viagens_mes.value)
+    
+    var meia = (Number(input_passagem.value) / 2) * Number(input_viagens_mes.value) 
+
+alert ("Você economizará R$" + (inteira-meia) + " por mes")
+}
+
+
+</script>
+</html>

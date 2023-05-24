@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Informe as linhas que você pega<input type="text" id="input_linhas"><br>
+    Pesquise a linha <input type="text" id="input_pesquisa"><br>
+    <button onclick="cadastrar()">Gravar busão</button><br>
+    <button onclick="pesquisar()">Pesquisar</button><br>
+    <div id="texto1"></div><br>
+    <div id="texto2"></div>
+</body>
+
+</html>
+<script>
+    var lista = []
+    function cadastrar() {
+        var cadastro = input_linhas.value
+        lista.unshift(cadastro)
+        texto1.innerHTML = ""
+        for (var i = 0; i < lista.length; i++){
+            texto1.innerHTML += `${lista[i]}<br>`
+        }
+    }
+
+    function pesquisar() {
+            var pesquisar1 = valor2.value;
+            var cont2 = 0
+            var lista2 = [];
+
+            for (var cont1 = 0; cont1 < list.length; cont1++) {
+                if (lista[cont1] == pesquisar1) {
+                    cont2++;
+                
+                    lista2.push(cont1 + 1);
+                }
+            }
+
+            if (cont1 == 0) {
+                texto2.innerHTML = `Você nunca pegou essa linha.`;
+            } else {
+                texto2.innerHTML = `Você já pegou essa linha ${cont2} +`;
+            }
+        }
+</script>

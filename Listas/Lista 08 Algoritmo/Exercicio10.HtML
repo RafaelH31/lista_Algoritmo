@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+Insira seu salário <input type="number" id="input_salario"><br><br>
+Insira sua idade <input type="number" id="input_idade"><br><br>
+<button onclick="calcular()">Analisar situação</button><br><br>
+<div id = 'div_resultado'></div>
+
+</body>
+<script>
+
+function calcular(){
+
+    var salario = Number(input_salario.value)
+    var idade = Number(input_idade.value)
+
+
+    if (idade < 18 && salario < 2500) {
+        div_resultado.innerHTML = 'Menor de idade e liso'
+    }
+
+    if (idade < 18 && salario >= 2500) {
+        div_resultado.innerHTML = 'Menor de idade e ostentação'
+    }
+    
+    if (idade >= 18 && salario >= 3500 && salario <= 7000) {
+        div_resultado.innerHTML = 'Maior de idade e ostentação'
+    }
+
+    if (idade >= 18 && salario > 7000) { 
+    div_resultado.innerHTML = 'Maior de idade e mega ostentação'
+    }  
+}
+</script>
+</html>
+

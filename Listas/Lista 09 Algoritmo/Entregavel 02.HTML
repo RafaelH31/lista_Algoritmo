@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pagamentus Metodus</title>
+</head>
+<body>
+    
+    <select id="pagamento">
+        <option value="dinheiro">Dinheiro</option>
+        <option value="débito">Cartão de débito</option>
+        <option value="crédito">Cartão de crédito</option>
+        <option value="boleto">Boleto</option>
+    </select>
+
+    <button onclick="calc()">Analisar compra</button>
+    <p id = 'p_resultado'></p>
+
+</body>
+<script>
+
+function calc(){
+ 
+    var metodos_pagamento = pagamento.value
+
+    if (metodos_pagamento == 'dinheiro' || metodos_pagamento == 'débito' ) {p_resultado.innerHTML = 'Você terá que pagar a vista'}
+    if (metodos_pagamento == 'crédito' || metodos_pagamento == 'boleto' ) {p_resultado.innerHTML = 'Pagamento poderá ser parcelado'}
+}
+
+</script>
+</html>

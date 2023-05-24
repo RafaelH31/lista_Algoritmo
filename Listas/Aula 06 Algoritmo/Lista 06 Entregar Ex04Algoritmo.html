@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frequencia</title>
+</head>
+<body>
+    
+    Insira a frequencia do aluno <input type = 'number' id = 'input_freq'>
+    <Button onclick = 'calcular()'>Analisar frequência</Button><br><br>
+    <p><img id="imagem" src="" alt=""></p>
+
+</body>
+<script>
+    function calcular(){
+        
+        var freq = input_freq.value
+        
+        if (freq < 50){
+            imagem.src = "https://image.shutterstock.com/image-photo/male-tourist-backpack-taking-picture-600w-168559910.jpg";
+				imagem.alt = "Turista";
+        }
+        
+        else{
+            imagem.src = "https://educayaprende.com/wp-content/uploads/2013/10/ni%C3%B1o-estudioso.jpg";
+				imagem.alt = "Aluno estudioso";
+        }
+    }
+</script>
+</html>

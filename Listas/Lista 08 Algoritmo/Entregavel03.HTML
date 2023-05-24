@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Piloto</title>
+</head>
+
+<body>
+
+    Insira a altura inicial <input type="number" id="input_altura_inicial"><br><br>
+    Insira a altura final <input type="number" id="input_altura_final"><br><br>
+
+    Insira o nome do candidato <input type="text" id="input_nome"><br><br>
+    Insira a altura do candidato <input type="number" id="input_altura"><br><br>
+
+    <button onclick="calcular()">Analisar candidato</button><br><br>
+    <div id='div_resposta'></div>
+
+</body>
+<script>
+
+    function calcular() {
+
+        var altura1 = Number(input_altura_inicial.value)
+        var altura2 = Number(input_altura_final.value)
+
+        var alturaCandidato = Number(input_altura.value)
+        var nome = input_nome.value
+
+        if (altura1 > 1 && altura2 > altura1){
+            if (alturaCandidato >= altura1 && alturaCandidato <= altura2) {
+                div_resposta.innerHTML = `O candidato ${nome} com altura de ${alturaCandidato} metros participará do processo de seleção de piloto`
+            } else {div_resposta.innerHTML = `Infelizmente o candidato ${nome} com altura de ${alturaCandidato} metros não atende os requisitos` }
+        } else alert("NÃO SEGUIR EM FRENTE")
+    }
+
+</script>
+
+</html>

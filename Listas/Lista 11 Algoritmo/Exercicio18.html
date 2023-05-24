@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Quantas latas de coca-cola tu já bebeu?<input type="number" id = "input_latas">
+    <button onclick="calcular()">Ver quantidade</button>
+    <div id="texto">
+    </div>
+</body>
+</html>
+<script>
+    function calcular(){
+        var cont = 1
+        var latas = Number(input_latas.value)
+        while (cont <= latas) {
+            texto.innerHTML += '<img src="garrafa.jpg" alt="">'
+        cont += 1 
+        }
+
+    }
+</script>

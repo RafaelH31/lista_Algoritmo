@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Insira os filmes que você mais gosta<input type="text" id="input_filme">
+    <button onclick="cadastrar()">Cadastrar filme</button>
+    <div id="texto"></div>
+</body>
+
+</html>
+<script>
+    var lista_filmes = []
+    function cadastrar() {
+        var cadastro = input_filme.value
+        lista_filmes.push(cadastro)
+
+        texto.innerHTML = `Filmes na lista: ${lista_filmes.length} <br>`
+        for (var i = 0; i < lista_filmes.length; i++) {
+            if (i % 2 == 0) {
+                texto.innerHTML += `<span style='color: blue;'>${i + 1}. ${lista_filmes[i]}</span><br>`
+            } else {
+                texto.innerHTML += `<span style='color: red;'>${i + 1}. ${lista_filmes[i]}</span><br>`
+            }
+        }
+    }
+</script>

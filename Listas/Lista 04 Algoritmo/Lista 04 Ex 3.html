@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    
+    Insira um número para ver sua tabuada
+    <input type = "number" id = "numero"> <br> <br>
+    
+    <button onclick = "tabuada()">Calcular</button> 
+
+    <div id="div_tabuada">Tabuada</div>
+
+</body>
+<script>
+function tabuada() {
+var y = Number(numero.value)
+var y0 =y * 0
+var y1 =y * 1
+var y2 =y * 2
+var y3 =y * 3
+var y4 =y * 4
+var y5 =y * 5
+var y6 =y * 6
+var y7 =y * 7
+var y8 =y * 8
+var y9 =y * 9
+var y10 =y * 10
+div_tabuada.innerHTML = `
+${y} x 0 = ${y0}<br>
+${y} x 1 = ${y1}<br>
+${y} x 2 = ${y2}<br>
+${y} x 3 = ${y3}<br>
+${y} x 4 = ${y4}<br>
+${y} x 5 = ${y5}<br>
+${y} x 6 = ${y6}<br>
+${y} x 7 = ${y7}<br>
+${y} x 8 = ${y8}<br>
+${y} x 9 = ${y9}<br>
+${y} x 10 = ${y10}<br>`
+}
+</script>
+</html>

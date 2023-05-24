@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dragon ball</title>
+</head>
+<body>
+    
+    Insira o nome do guerreiro:
+    <br>
+    <input id= "input_nome">
+    <br>
+    Insira o KI normal do guerreiro:
+    <br>
+    <input type = "number" id= "input_ki_normal">
+    <br>
+    <button onclick="ver_ki_em_cada_forma()">Ver ki em cada forma</button>
+
+
+</body>
+<script>
+
+function ver_ki_em_cada_forma(){
+
+    alert ("Super Sayajin " + input_nome.value + " seu KI é " + input_ki_normal.value * 50)
+    
+    alert ("Super Sayajin 2 " + input_nome.value + " seu KI é " + input_ki_normal.value * 100)
+
+}
+</script>
+</html>

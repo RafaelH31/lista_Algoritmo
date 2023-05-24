@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    Insira o valor da pizza <input type="Number" id="input_pizza"><br>
+    Insira a quantidade de amigos <input type ="Number" id="input_amigos"><br>
+    <br><button onclick = "rateio()">Rola a pizza?</button><br>
+    <br><div id = "div_pizza"></div><br>
+
+</body>
+<script>
+    function rateio() {
+        var pizza = Number(input_pizza.value)
+        var amigos = Number(input_amigos.value)
+        var divisão = Number(pizza / amigos)
+        div_pizza.innerHTML = `Cada amigo vai pagar R$${divisão} pela pizza`
+        if (divisão >=20){div_pizza.innerHTML +=  `<i style="color: blue;"><b> Deu ruim! Pizza muito cara!</b></i>`}
+
+    }
+
+
+
+</script>
+</html>

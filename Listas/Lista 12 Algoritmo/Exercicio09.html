@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    Insira os projetos que você participou<input type="texto" id="input_projeto"><br>
+    <button onclick="registrar()">Registrar projeto</button>
+    <button onclick="mostrar()">Mostrar projetos</button><br>
+    <div id="texto"></div><br>
+    <div id="lista"></div>
+</body>
+
+</html>
+<script>
+    var projetos_registrados = []
+    function registrar() {
+        var projeto = input_projeto.value
+
+        projetos_registrados.push(projeto)
+
+        for (var i = 0; i < projetos_registrados.length; i++) {
+            if (i < 4) {
+                texto.innerHTML = `Você já fez ${i + 1} projetos. Por isso você é um profissional junior`
+            } else if (i >= 4 && i < 12) {
+                var cinco = projetos_registrados[4]
+                texto.innerHTML = `Pleno desde o projeto ${cinco}`
+            } else {
+                texto.innerHTML = `Sênior desde o projeto ${projetos_registrados[12]}`
+            }
+
+        }
+    }
+    function mostrar() {
+        var reverso = projetos_registrados.length -1
+        for (cont = reverso; cont >= 0; cont -= 1){
+            lista.innerHTML += `${projetos_registrados[cont]}<br>`
+        }
+    }
+</script>

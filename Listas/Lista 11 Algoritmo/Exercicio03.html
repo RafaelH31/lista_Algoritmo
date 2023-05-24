@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frase v2</title>
+</head>
+<body>
+    <input type = 'text' id = 'input_frase'>
+    <button onclick="frase()">"Diga algo sobre a matéria de Algoritmos"</button>
+    <div id="div_mensagem"></div>
+</body>
+</html>
+<script>
+    function frase(){
+        var contador = 1
+        var numerar = 1
+        var frase = input_frase.value
+        div_mensagem.innerHTML = ""
+        while (contador <= 7) { 
+            div_mensagem.innerHTML += `${numerar}.${frase} <br>`
+            contador += 1
+            numerar += 1
+        }
+    }
+</script>
